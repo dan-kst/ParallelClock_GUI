@@ -25,3 +25,14 @@ add_library(rgr_logic
 target_include_directories( rgr_logic PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+
+# --- Testing ---
+enable_testing()
+add_executable(rgr_test
+    tests/tests_time_model.cpp
+)
+target_link_libraries(rgr_test PRIVATE rgr_logic GTest::gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(rgr_test)

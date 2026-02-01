@@ -69,8 +69,7 @@ auto TimeModel::To24Hour() const -> std::string {
 }
 
 auto TimeModel::To12Hour() const -> std::string {
-  std::uint8_t display_hour =
-      static_cast<std::uint8_t>(hour_) % MAX_HOURS;
+  std::uint8_t display_hour = static_cast<std::uint8_t>(hour_) % MAX_HOURS;
 
   display_hour = display_hour == 0 ? MAX_HOURS : display_hour;
   std::string_view period = (this->hour_ >= MAX_HOURS) ? "PM" : "AM";
