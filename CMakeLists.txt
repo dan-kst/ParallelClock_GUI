@@ -17,3 +17,11 @@ endif()
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED IMPORTED_TARGET gtkmm-4.0)
 find_package(GTest REQUIRED)
+
+add_library(rgr_logic
+    src/TimeModel.cpp
+)
+
+target_include_directories( rgr_logic PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
