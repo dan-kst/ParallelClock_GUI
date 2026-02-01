@@ -26,6 +26,15 @@ target_include_directories( rgr_logic PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+# --- Executable: The GUI App ---
+add_executable(rgr_app
+    src/main.cpp
+    src/ClockWindow.cpp
+)
+target_include_directories( rgr_app PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+target_link_libraries(rgr_app PRIVATE rgr_logic PkgConfig::GTKMM)
 
 # --- Testing ---
 enable_testing()
